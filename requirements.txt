@@ -1,3 +1,13 @@
+#General DB and keystore
 sqlalchemy==1.0.13
+redis==2.10.6
+
+#Math, Data, Optimization libs
 numpy==1.11.1
 pandas==0.18.1
+gurobipy==5.0.2
+glpk==0.3
+
+#Web and Flask
+Flask=0.12.2
+gunicorn==19.7.1
