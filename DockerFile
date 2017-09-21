@@ -1,6 +1,6 @@
-MAINTAINER Philip Hamilton <pjhamilton4@gmail.com>
-
 FROM python:3.5
+
+MAINTAINER Philip Hamilton <pjhamilton4@gmail.com>
 
 COPY requirements.txt requirements.txt
 RUN pip install -r requirements.txt
