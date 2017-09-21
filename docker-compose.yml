@@ -1,0 +1,30 @@
+version: '1'
+
+services:
+  redis:
+    image: 'redis:3.2.10'
+    command: redis-server --requirepass devpassword
+  volumes:
+    - 'redis:/var/lib/redis/data'
+  ports:
+    - '6379:6379'
+ 
+celery-server:
+  build: .
+  command: celery worker -l info -A project.tasks
+  env_file:
+    - '.env'
+  volumes:
+    - '.:/celery-tasks'
+    
+site:
+  build:
+  command: >
+    gunicorn -b 0.0.0.0:8080
+      --access-logfile -
+      --reload
+      "optimization-queuer:create_app()"
+    environment:
+      PYTHONUNBUFFERED: 'true'
+    volumes:
+      - '.:/otimization-queuer'
