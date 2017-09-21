@@ -1,6 +1,8 @@
 language: python
 python:
   - "3.5"
+before_install:
+  - sudo apt-get install glpk-utils libglpk-dev glpk-doc python-glpk
 addons:
   apt:
     sources:
