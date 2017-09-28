@@ -1,6 +1,16 @@
-FROM python:3.5
+FROM continuumio/anaconda3:4.2.0
 
-MAINTAINER Philip Hamilton <pjhamilton4@gmail.com>
+MAINTAINER Philip Hamilton <philip.hamilton@macys.com>
 
 COPY requirements.txt requirements.txt
+
+RUN apt-get update \
+        && apt-get install build-essential -y
+
+RUN conda config --add channels http://conda.anaconda.org/gurobi
+
+RUN conda install gurobi==7.0.2
+
 RUN pip install -r requirements.txt
+
+CMD [ "/bin/bash" ]
