@@ -6,7 +6,7 @@ redis==2.10.6
 numpy==1.11.1
 pandas==0.18.1
 #gurobipy==5.0.2
-glpk==0.3
+pulp==1.6.8
 
 #Web and Flask
 Flask==0.12.2
