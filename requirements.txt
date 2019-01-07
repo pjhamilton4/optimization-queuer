@@ -9,5 +9,5 @@ pandas==0.18.1
 pulp==1.6.8
 
 #Web and Flask
-Flask==0.12.2
+Flask==0.12.3
 gunicorn==19.7.1
